@@ -20,13 +20,13 @@ extern "C" {
 /**
   ALTIVEC-accelerated shuffle routine.
 */
-BLOSC_NO_EXPORT void shuffle_altivec(const int32_t bytesoftype, const int32_t blocksize,
+BLOSC_EXPORT void shuffle_altivec(const int32_t bytesoftype, const int32_t blocksize,
                                      const uint8_t *_src, uint8_t *_dest);
 
 /**
   ALTIVEC-accelerated unshuffle routine.
 */
-BLOSC_NO_EXPORT void unshuffle_altivec(const int32_t bytesoftype, const int32_t blocksize,
+BLOSC_EXPORT void unshuffle_altivec(const int32_t bytesoftype, const int32_t blocksize,
                                        const uint8_t *_src, uint8_t *_dest);
 
 #ifdef __cplusplus

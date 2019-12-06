@@ -33,16 +33,25 @@ BLOSC_NO_EXPORT int64_t
 /**
   ALTIVEC-accelerated bitshuffle routine.
 */
-BLOSC_NO_EXPORT int64_t
+BLOSC_EXPORT int64_t
     bshuf_trans_bit_elem_altivec(void* in, void* out, const size_t size,
                               const size_t elem_size, void* tmp_buf);
 
 /**
   ALTIVEC-accelerated bitunshuffle routine.
 */
-BLOSC_NO_EXPORT int64_t
+BLOSC_EXPORT int64_t
     bshuf_untrans_bit_elem_altivec(void* in, void* out, const size_t size,
                                 const size_t elem_size, void* tmp_buf);
+
+BLOSC_EXPORT int64_t
+    bitshuffle1_altivec(void* in, void* out, size_t size,
+                        size_t elem_size);
+BLOSC_EXPORT void
+	bitunshuffle1_altivec(void* _src, void* dest, const size_t size, const size_t elem_size);
+
+BLOSC_EXPORT int64_t bshuf_trans_bit_byte_altivec(void* in, void* out, 
+                                         size_t size, size_t elem_size);
 
 #ifdef __cplusplus
 }

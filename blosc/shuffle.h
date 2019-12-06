@@ -31,11 +31,11 @@ extern "C" {
   calling the hardware-accelerated routines because this method is both cross-
   platform and future-proof.
 */
-BLOSC_NO_EXPORT void
+BLOSC_EXPORT void
     shuffle(const int32_t bytesoftype, const int32_t blocksize,
             const uint8_t* _src, const uint8_t* _dest);
 
-BLOSC_NO_EXPORT int32_t
+BLOSC_EXPORT int32_t
     bitshuffle(const int32_t bytesoftype, const int32_t blocksize,
                const uint8_t *_src, const uint8_t *_dest,
                const uint8_t *_tmp);
@@ -50,12 +50,12 @@ BLOSC_NO_EXPORT int32_t
   calling the hardware-accelerated routines because this method is both cross-
   platform and future-proof.
 */
-BLOSC_NO_EXPORT void
+BLOSC_EXPORT void
     unshuffle(const int32_t bytesoftype, const int32_t blocksize,
               const uint8_t* _src, const uint8_t* _dest);
 
 
-BLOSC_NO_EXPORT int32_t
+BLOSC_EXPORT int32_t
     bitunshuffle(const int32_t bytesoftype, const int32_t blocksize,
                  const uint8_t *_src, const uint8_t *_dest,
                  const uint8_t *_tmp);

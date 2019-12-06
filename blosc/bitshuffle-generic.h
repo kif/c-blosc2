@@ -124,7 +124,7 @@ bshuf_shuffle_bit_eightelem_scal(const void* in, void* out,
  *
  */
 
-BLOSC_NO_EXPORT int64_t
+BLOSC_EXPORT int64_t
 bshuf_trans_bit_elem_scal(const void* in, void* out, const size_t size,
                           const size_t elem_size, void* tmp_buf);
 
@@ -149,7 +149,7 @@ bshuf_trans_bit_elem_scal(const void* in, void* out, const size_t size,
  *
  */
 
-BLOSC_NO_EXPORT int64_t
+BLOSC_EXPORT int64_t
 bshuf_untrans_bit_elem_scal(const void* in, void* out, const size_t size,
                             const size_t elem_size, void* tmp_buf);
 

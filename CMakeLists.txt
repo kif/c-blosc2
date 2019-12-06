@@ -68,7 +68,7 @@
 #    DEV: static includes blosc2.a and blosc2.h
 
 if (NOT WIN32)
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu99")
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu99 -maltivec")
 endif(NOT WIN32)
 
 cmake_minimum_required(VERSION 2.8.10)
@@ -287,11 +287,7 @@ elseif (CMAKE_SYSTEM_PROCESSOR STREQUAL armv7l OR
         message(WARNING "Unable to determine which ${CMAKE_SYSTEM_PROCESSOR} hardware features are supported by the C compiler (${CMAKE_C_COMPILER_ID} ${CMAKE_C_COMPILER_VERSION}).")
     endif ()
 elseif (CMAKE_SYSTEM_PROCESSOR STREQUAL ppc64le)
-    if (CMAKE_C_COMPILER_ID STREQUAL GNU AND CMAKE_C_COMPILER_VERSION VERSION_GREATER 8)
-		set(COMPILER_SUPPORT_ALTIVEC TRUE)
-    else ()
-        set(COMPILER_SUPPORT_ALTIVEC FALSE)
-    endif ()
+	set(COMPILER_SUPPORT_ALTIVEC TRUE)
 else ()
     # If the target system processor isn't recognized, emit a warning message to alert the user
     # that hardware-acceleration support won't be available but allow configuration to proceed.
